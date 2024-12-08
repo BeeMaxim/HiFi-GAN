@@ -1,8 +1,8 @@
-# PyTorch Template for DL projects
+# Implementation of HiFi-gan
 
 <p align="center">
-  <a href="#instruction">About</a> 
-  <a href="#weights">About</a>•
+  <a href="#instruction">Instruction</a> 
+  <a href="#weights">Weights</a>•
   <a href="#license">License</a>
 </p>
 
