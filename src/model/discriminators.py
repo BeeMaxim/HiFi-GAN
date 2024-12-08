@@ -102,10 +102,6 @@ class Discriminator(nn.Module):
             MSD(),
             MSD()
         ])
-        self.poolings = nn.ModuleList([
-            nn.AvgPool1d(4, 2, padding=2),
-            nn.AvgPool1d(4, 2, padding=2)
-        ])
 
     def forward(self, audio, generated_audio, **batch):
         audio_preds = []

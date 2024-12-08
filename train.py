@@ -44,9 +44,9 @@ def main(config):
     # model = instantiate(config.model).to(device)
     # logger.info(model)
     generator = instantiate(config.model).to(device)
-    discriminator = Discriminator()
+    discriminator = Discriminator().to(device)
     if config.trainer.from_audio:
-        melspec = MelSpectrogram(MelSpectrogramConfig)
+        melspec = MelSpectrogram(MelSpectrogramConfig).to(device)
 
     #logger.info(generator)
     #logger.info(discriminator)

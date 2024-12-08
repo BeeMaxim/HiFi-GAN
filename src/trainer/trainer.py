@@ -54,8 +54,9 @@ class Trainer(BaseTrainer):
             batch["discriminator_loss"].backward()
             self._clip_grad_norm()
             self.d_optimizer.step()
+            '''
             if self.d_lr_scheduler is not None:
-                self.d_lr_scheduler.step()
+                self.d_lr_scheduler.step()'''
 
 
         # Generator step
@@ -73,8 +74,9 @@ class Trainer(BaseTrainer):
             batch["generator_loss"].backward()
             self._clip_grad_norm()
             self.g_optimizer.step()
+            '''
             if self.g_lr_scheduler is not None:
-                self.g_lr_scheduler.step()
+                self.g_lr_scheduler.step()'''
 
         # update metrics for each loss (in case of multiple losses)
         for loss_name in self.config.writer.loss_names:

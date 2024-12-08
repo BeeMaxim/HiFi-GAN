@@ -253,6 +253,11 @@ class BaseTrainer:
             if batch_idx + 1 >= self.epoch_len:
                 break
 
+        if self.d_lr_scheduler is not None:
+            self.d_lr_scheduler.step()
+        if self.g_lr_scheduler is not None:
+            self.g_lr_scheduler.step()
+
         logs = last_train_metrics
 
         # Run val/test
