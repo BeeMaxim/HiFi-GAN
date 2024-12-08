@@ -84,7 +84,8 @@ class BaseDataset(Dataset):
         data_object = torch.load(path)
         return data_object
     
-    def load_audio(self, path):
+    @staticmethod
+    def load_audio(path):
         audio_tensor, _ = torchaudio.load(path)
         audio_tensor = audio_tensor[0:1, :]  # remove all channels but the first
         return audio_tensor

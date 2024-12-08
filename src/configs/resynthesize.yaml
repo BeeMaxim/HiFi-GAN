@@ -1,0 +1,7 @@
+defaults:
+  - model: generator_v2
+  - _self_
+device: auto
+input_path: examples_audio
+output_path: examples_output
+from_pretrained: weights\checkpoint-epoch15_v2.pth
