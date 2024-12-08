@@ -1,21 +1,13 @@
-import warnings
-
 import hydra
 import torch
 import torchaudio
 from tqdm import tqdm
 from hydra.utils import instantiate
 import os
-from omegaconf import OmegaConf
 
-from src.datasets.data_utils import get_dataloaders
-from src.trainer import Trainer
-from src.utils.init_utils import set_random_seed, setup_saving_and_logging
 from src.utils.io_utils import ROOT_PATH
 
-from src.model.discriminators import Discriminator
 from src.model.mel_spectrogram import MelSpectrogram, MelSpectrogramConfig
-from src.datasets.ljspeech_dataset import LJspeechDataset
 
 
 @hydra.main(version_base=None, config_path="src/configs", config_name="resynthesize")
@@ -33,6 +25,7 @@ def main(config):
             generator.load_state_dict(checkpoint["generator_state_dict"])
         else:
             generator.load_state_dict(checkpoint)
+    generator.eval()
     melspec = MelSpectrogram(MelSpectrogramConfig).to(device)
 
 

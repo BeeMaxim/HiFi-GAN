@@ -1,0 +1,9 @@
+defaults:
+  - model: generator_v3
+  - _self_
+device: auto
+input_path: examples_text
+output_path: examples_text
+from_pretrained: weights\checkpoint-epoch24_v3.pth
+text: null
+file_name: test
